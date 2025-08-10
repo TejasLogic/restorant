@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Restaurant Management Design System - Warm & Appetizing Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Restaurant-themed color palette */
+    --background: 35 20% 98%;
+    --foreground: 20 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 30% 96%;
+    --card-foreground: 20 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 96%;
+    --popover-foreground: 20 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Warm orange primary - appetizing and energetic */
+    --primary: 25 85% 55%;
+    --primary-foreground: 40 30% 96%;
+    --primary-hover: 25 85% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm cream secondary */
+    --secondary: 40 25% 88%;
+    --secondary-foreground: 20 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft beige muted */
+    --muted: 35 15% 90%;
+    --muted-foreground: 20 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Golden accent */
+    --accent: 45 80% 65%;
+    --accent-foreground: 20 15% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Rich red for destructive actions */
+    --destructive: 5 80% 55%;
+    --destructive-foreground: 40 30% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success green for completed orders */
+    --success: 140 60% 45%;
+    --success-foreground: 40 30% 96%;
 
-    --radius: 0.5rem;
+    /* Warm borders */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 25 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Restaurant-specific design tokens */
+    --chef-orange: 20 90% 58%;
+    --cream-light: 42 35% 92%;
+    --brown-warm: 30 25% 25%;
+    --gold-accent: 45 85% 70%;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--cream-light)));
+    --gradient-chef: linear-gradient(135deg, hsl(var(--chef-orange)), hsl(var(--primary)));
+    
+    /* Shadows */
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(var(--brown-warm) / 0.1);
+    --shadow-floating: 0 20px 40px -20px hsl(var(--primary) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
