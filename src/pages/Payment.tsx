@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavigationBar } from '@/components/ui/navigation-bar';
 import { Button } from '@/components/ui/button';
@@ -39,10 +39,11 @@ const Payment: React.FC = () => {
     navigate('/');
   };
 
-  if (currentOrder.length === 0 && !orderPlaced) {
-    navigate('/');
-    return null;
-  }
+  useEffect(() => {
+    if (currentOrder.length === 0 && !orderPlaced) {
+      navigate('/');
+    }
+  }, [currentOrder.length, orderPlaced, navigate]);
 
   if (orderPlaced && receipt) {
     return (
