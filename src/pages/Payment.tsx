@@ -15,8 +15,19 @@ const Payment: React.FC = () => {
   const [receipt, setReceipt] = useState<any>(null);
 
   const handlePayment = (method: 'cash' | 'online') => {
+    // Create order data
+    const orderData = {
+      id: `order_${Date.now()}`,
+      items: [...currentOrder],
+      total: getOrderTotal(),
+      status: 'pending' as const,
+      paymentMethod: method,
+      timestamp: new Date(),
+    };
+    
+    // Place order and generate receipt with order data
     const orderId = placeOrder(method);
-    const generatedReceipt = generateReceipt(orderId);
+    const generatedReceipt = generateReceipt(orderId, orderData);
     setReceipt(generatedReceipt);
     setOrderPlaced(true);
     setSelectedPayment(method);

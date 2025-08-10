@@ -28,7 +28,7 @@ interface RestaurantContextType {
 
   // Receipts
   receipts: Receipt[];
-  generateReceipt: (orderId: string) => Receipt;
+  generateReceipt: (orderId: string, orderData?: Order) => Receipt;
 
   // Stats
   getStats: () => Stats;
@@ -141,8 +141,9 @@ export const RestaurantProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     setOrders(prev => prev.filter(order => order.id !== id));
   };
 
-  const generateReceipt = (orderId: string): Receipt => {
-    const order = orders.find(o => o.id === orderId);
+  const generateReceipt = (orderId: string, orderData?: Order): Receipt => {
+    // Use provided order data or find in orders array
+    const order = orderData || orders.find(o => o.id === orderId);
     if (!order) throw new Error('Order not found');
     
     const receipt: Receipt = {
